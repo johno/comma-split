@@ -15,7 +15,12 @@
     "url": "https://github.com/johnotander/comma-split.git"
   },
   "keywords": [
-
+    "comma",
+    "commas",
+    "split",
+    "delimiters",
+    "list",
+    "whitespace"
   ],
   "license": "MIT",
   "bugs": {
