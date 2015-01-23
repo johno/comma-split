@@ -27,6 +27,13 @@ commaSplit('some, string,\r\r\n\tdelimited\n,by, commas', { ignoreTrailingWhites
 
 commaSplit('some, string,\r\r\n\tdelimited\n,by, commas', { ignoreLeadingWhitespace: true });
 // => ['some',' string','\r\r\n\tdelimited','by',' commas']
+
+commaSplit(',,some, string,\r\r\n\tdelimited\n,by, commas,');
+// => ['','','some','string','delimited','by','commas','']
+
+
+commaSplit(',,some, string,\r\r\n\tdelimited\n,by, commas, ,,', { ignoreBlank: true });
+// => [some','string','delimited','by','commas']
 ```
 
 ## License

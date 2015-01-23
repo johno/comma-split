@@ -1,5 +1,7 @@
 'use strict';
 
+var isBlank = require('is-blank');
+
 module.exports = function commaSplit(stringToSplit, options) {
   if (typeof stringToSplit != 'string') {
     throw new TypeError('comma-split expects a string');
@@ -17,5 +19,8 @@ module.exports = function commaSplit(stringToSplit, options) {
     var splitRegex = /\s*,\s*/;
   }
 
-  return stringToSplit.split(splitRegex);
+  var list = stringToSplit.split(splitRegex);
+  return options.ignoreBlank ? list.filter(isNotBlank) : list;
 }
+
+function isNotBlank(obj) { return !isBlank(obj); }

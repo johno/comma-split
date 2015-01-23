@@ -27,7 +27,9 @@
     "url": "https://github.com/johnotander/comma-split/issues"
   },
   "homepage": "https://github.com/johnotander/comma-split",
-  "dependencies": {},
+  "dependencies": {
+    "is-blank": "0.0.1"
+  },
   "devDependencies": {
     "mocha": "*"
   }

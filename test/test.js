@@ -33,8 +33,15 @@ describe('comma-split', function() {
 
   it('should be able to handle malformed comma delimited lists', function() {
     assert.deepEqual(
-      commaSplit(',,some, string,\r\r\n\tdelimited\n,by, commas'),
-      ['','','some','string','delimited','by','commas']
+      commaSplit(',,some, string,\r\r\n\tdelimited\n,by, commas,'),
+      ['','','some','string','delimited','by','commas','']
+    );
+  });
+
+  it('should be able to ignore blank/empty strings', function() {
+    assert.deepEqual(
+      commaSplit(',,some, string,\r\r\n\tdelimited\n,by, commas,', { ignoreBlank: true }),
+      ['some','string','delimited','by','commas']
     );
   });
 });
