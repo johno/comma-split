@@ -1,0 +1,29 @@
+{
+  "name": "comma-split",
+  "description": "Split comma delimited strings into an array.",
+  "author": "John Otander",
+  "version": "0.0.1",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/johnotander/comma-split.git"
+  },
+  "keywords": [
+
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/johnotander/comma-split/issues"
+  },
+  "homepage": "https://github.com/johnotander/comma-split",
+  "dependencies": {},
+  "devDependencies": {
+    "mocha": "*"
+  }
+}
