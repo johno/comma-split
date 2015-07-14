@@ -1,6 +1,7 @@
 'use strict';
 
 var isBlank = require('is-blank');
+var isNotDupe = require('dupe');
 
 module.exports = function commaSplit(stringToSplit, options) {
   if (typeof stringToSplit != 'string') {
@@ -20,7 +21,16 @@ module.exports = function commaSplit(stringToSplit, options) {
   }
 
   var list = stringToSplit.split(splitRegex);
-  return options.ignoreBlank ? list.filter(isNotBlank) : list;
+
+  if (options.ignoreBlank) {
+    list = list.filter(isNotBlank);
+  }
+
+  if (options.ignoreDuplicate) {
+    list = list.filter(isNotDupe);
+  }
+
+  return list;
 }
 
 function isNotBlank(obj) { return !isBlank(obj); }

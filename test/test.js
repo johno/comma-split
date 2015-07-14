@@ -44,4 +44,11 @@ describe('comma-split', function() {
       ['some','string','delimited','by','commas']
     );
   });
+
+  it('should be able to ignore duplicate strings', function () {
+    assert.deepEqual(
+      commaSplit('some, some, string, delimited, by, by, commas, commas', { ignoreDuplicate: true }),
+      ['some','string','delimited','by','commas']
+    );
+  });
 });
