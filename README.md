@@ -1,6 +1,4 @@
-# comma-split
-
-[![Build Status](https://secure.travis-ci.org/johnotander/comma-split.png?branch=master)](https://travis-ci.org/johnotander/comma-split)
+# comma-split [![Build Status](https://secure.travis-ci.org/johnotander/comma-split.png?branch=master)](https://travis-ci.org/johnotander/comma-split)
 
 Split comma delimited strings into an array. Optional handling for trailing
 and/or leading whitespace.
@@ -31,10 +29,19 @@ commaSplit('some, string,\r\r\n\tdelimited\n,by, commas', { ignoreLeadingWhitesp
 commaSplit(',,some, string,\r\r\n\tdelimited\n,by, commas,');
 // => ['','','some','string','delimited','by','commas','']
 
-
 commaSplit(',,some, string,\r\r\n\tdelimited\n,by, commas, ,,', { ignoreBlank: true });
 // => [some','string','delimited','by','commas']
+
+commaSplit('some, string, with,a, dupe, dupe', { ignoreDuplicate: true });
+// => [some','string','with', 'a', 'dupe'']
 ```
+
+### Options
+
+* `ignoreWhitespace`:`boolean` - Ignore leading and trailing whitespace.
+* `ignoreTrailingWhitespace`:`boolean` - Ignore trailing whitespace.
+* `ignoreLeadingWhitespace`:`boolean` - Ignore leading whitespace.
+* `ignoreDuplicate`:`boolean` - Ignore duplicate elements.
 
 ## License
 
